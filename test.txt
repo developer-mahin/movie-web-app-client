@@ -1,0 +1,25 @@
+Assignment received
+we are expecting you to complete a short assignment.
+Create a Basic Project Using NodeJS 
+
+TASK A
+1. Connect with MongoDB
+2. Create a POST api to save a movie into database.
+POST /add-movie
+3. Create a GET api to fetch all the movies stores in the database.
+GET /get-all
+4. Create a GET api in which we will send movie id in query param and from backend only single movie having same movie id will be fetched.
+GET /get-single?id={id}
+5. Create a GET api to fetch movies using pagination.
+GET /get-paginated?page={page}&size={size}
+Example:
+page=1 size=10 [ Fetch first 10 Records From Collection]
+page=2 size=10 [ Skip first (page-1)*size records and fetch next 10 records.
+page =5 size=5 [Skip first 25 records and fetch next 5 records]
+
+TASK B
+
+Make a one to one communication medium using socket.io 
+that is not one to many or many to one communication
+also test the use ob data in megabyte for 10 minutes communications between two user.
+and in a single channel how many user get connected at a single time. and if one channel gets full then you have to create another channel.
