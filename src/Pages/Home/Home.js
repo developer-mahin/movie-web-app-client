@@ -1,10 +1,12 @@
 import React from 'react';
 import Banner from '../../Components/Banner/Banner';
+import AllMovieSection from './AllMovieSection';
 
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
+            <Banner/>
+            <AllMovieSection/>
         </div>
     );
 };

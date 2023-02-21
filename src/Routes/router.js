@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
+import SingleMovieSection from "../Components/SingleMovieSection/SingleMovieSection";
 import Main from "../Layout/Main";
 import AboutUs from "../Pages/About/AboutUs";
+import AddMovie from "../Pages/AddMovie/AddMovie";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import AllMovieSection from "../Pages/Home/AllMovieSection";
 import Home from "../Pages/Home/Home";
-import Movies from "../Pages/Movies/Movies";
 import Series from "../Pages/Series/Series";
 
 const router = createBrowserRouter([
@@ -18,7 +20,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/movies",
-                element: <Movies></Movies>
+                element: <AllMovieSection></AllMovieSection>
+            },
+            {
+                path: "/add-movie",
+                element: <AddMovie></AddMovie>
             },
             {
                 path: "/series",
@@ -27,6 +33,13 @@ const router = createBrowserRouter([
             {
                 path: "/about-us",
                 element: <AboutUs></AboutUs>
+            },
+            {
+                path: "/get-single/:id",
+                element: <SingleMovieSection></SingleMovieSection>,
+                loader: async ({ params }) => {
+                    return fetch(`http://localhost:5000/get-single/${params.id}`)
+                }
             }
         ]
     }
